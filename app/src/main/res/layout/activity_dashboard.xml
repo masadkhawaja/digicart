@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_dashboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="com.example.shiva.loginsignup.DashboardActivity">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="176dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#000"
+        android:textSize="20dp" />
+
+    <Button
+        android:background="@drawable/logoutbutton"
+        android:text="LOGOUT"
+        android:textColor="#ffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_retry"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:id="@+id/button1"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/download"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        />
+
+
+
+    <!-- EditText for entering a phone number  -->
+    <EditText
+        android:id="@+id/editText_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:inputType="phone"
+        android:hint="@string/enter_phone" />
+
+    <!-- EditText for entering a message  -->
+    <Button
+        android:id="@+id/update"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/editText_main"
+        android:background="@drawable/buttonshape"
+        android:text="Update" />
+
+    <EditText
+        android:id="@+id/sms_message"
+        android:layout_width="@dimen/edittext_width"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText_main"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:hint="@string/enter_message_here"
+        android:inputType="textMultiLine"
+        android:visibility="gone"/>
+
+    <!-- The smsSendMessage() method will be called by this button.  -->
+    <Button
+        android:id="@+id/message_icon"
+        android:contentDescription="@string/send_a_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_below="@id/sms_message"
+        android:drawablePadding="0dp"
+        android:visibility="visible"
+        android:text="Bill"
+        android:textColor="#ffff"
+        android:onClick="smsSendMessage"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/buttonshape"/>
+
+    <!-- The retryApp() method will be called by this button.  -->
+    <Button
+        android:id="@+id/button_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/retry"
+        android:layout_below="@id/message_icon"
+        android:text="@string/retry"
+        android:visibility="invisible"
+        android:onClick="retryApp"/>
+
+</RelativeLayout>
